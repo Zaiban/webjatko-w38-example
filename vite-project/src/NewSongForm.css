@@ -1,0 +1,10 @@
+.new__song__form {
+  display: flex;
+  justify-content: center;
+}
+.new-song__label {
+  margin-right: 5px;
+}
+.new-song__name {
+  margin-right: 10px;
+}
