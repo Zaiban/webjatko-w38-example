@@ -4,6 +4,7 @@ import NewSongForm from './NewSongForm';
 
 function App() {
   const [feedback, setFeedback] = useState('Player is ready!');
+  const [songInfo, setSongInfo] = useState('-');
 
   const clickPlay = () => {
     console.log('Now playing...');
@@ -14,13 +15,18 @@ function App() {
     setFeedback('Stopped!');
   };
 
+  const handleUpdateSongInfo = (songInfo) => {
+    setSongInfo(songInfo);
+  }
+
   return (
     <>
       <h1>React State & Working with Events</h1>
+      <h4>{songInfo}</h4>
       <button onClick={ () => clickPlay() }>⏯️ Play</button>
       <button onClick={ () => clickStop() }>⏹️ Stop</button>
       <h4>{feedback}</h4>
-      <NewSongForm />
+      <NewSongForm handleUpdateSongInfo={handleUpdateSongInfo} />
     </>
   )
 }
